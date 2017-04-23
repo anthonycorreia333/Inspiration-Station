@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 
 <head>
 	<meta charset="utf-8">
@@ -11,38 +11,23 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee|Ubuntu" rel="stylesheet">
 </head>
 
-<body ng-controller="MashApeController as mash">
+<body ng-controller="ApplicationController as applicationCtrl">
     <div class="container">
         <div class="well well-container" id="topWell">
             <h1 class="text-center">Inspiration Station</h1>
             <h4 class="text-center">There are thousands of possible API combinations out there. Discover your "light-bulb!"</h4>
             <br>
             <div>
-                <a href="#" class="btn btn-info form-control">Inspire me!</a>
+                <button ng-click="application.getApi()" href="#" class="btn btn-info form-control">Inspire me!</button>
             </div>
             <br>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4" ng-repeat="application in applicationCtrl.applications">
                     <div class="panel panel panel-info">
-                        <div class="panel-heading">API Name</div>
+                        <div class="panel-heading">{{application.name}}</div>
                         <div class="panel-body">IMG</div>
-                        <div class="panel-footer">Description</div>
+                        <div class="panel-footer">{{application.description}}</div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel panel-info">
-                        <div class="panel-heading">API Name</div>
-                        <div class="panel-body">IMG</div>
-                        <div class="panel-footer">Description</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel panel-info">
-                        <div class="panel-heading">API Name</div>
-                        <div class="panel-body">IMG</div>
-                        <div class="panel-footer">Description</div>
-                    </div>
-                </div>
             </div>
         </div>
         <footer class="footer">
@@ -53,8 +38,13 @@
             </div>
         </footer>
     </div>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/main/application.controller.js"></script>
+    <script src="app/core/application.factory.js"></script>
+
 </body>
 
 </html>
