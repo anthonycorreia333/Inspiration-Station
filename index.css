@@ -1,0 +1,15 @@
+h1 {
+	font-family: 'Bungee', cursive;
+}
+
+h4 {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#topWell {
+	margin-top: 25px;
+}
+
+footer {
+	display: block;
+}
