@@ -12,9 +12,13 @@
         var vm = this;
         vm.applications = [];
 
-        vm.getApi = getApi;
+        //vm.getApi = getApi;
+
+        activate();
+
+        /////////////////////
         
-        function getApi() {
+        function activate() {
         	appFactory
         		.getAll()
         		.then(response => {

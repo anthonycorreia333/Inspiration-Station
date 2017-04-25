@@ -11,7 +11,7 @@
     function appFactory($http) {
         var service = {
             getAll: getAll,
-            getById: getById
+            //getById: getById
         };
 
         return service;
@@ -19,11 +19,11 @@
         ////////////////
 
         function getAll() {
-        	return $http.get('localhost:52180/api/applications');
+        	return $http.get('http://localhost:52180/api/applications');
         }
 
-        function getById() {
+        // function getById() {
 
-        }
+        // }
     }
 })();
